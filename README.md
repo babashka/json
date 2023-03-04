@@ -1,6 +1,6 @@
 # babashka.json
 
-This library provides an abstraction over several JSON implementation, covering the most common scripting use cases:
+This library provides an abstraction over several JSON implementations, covering the most common scripting use cases:
 
 - `read-str`: reading a JSON object from a string with a configurable keyword function, defaulting to `keyword`
 - `write-str`: writing a Clojure value to a JSON string
