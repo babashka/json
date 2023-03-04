@@ -20,7 +20,7 @@ you can now write:
 (babashka.json/read-str ...)
 ```
 
-instead.
+instead, while still choosing your preferred implementation on the JVM.
 
 On the JVM, this library uses whatever is on your classpath, in the following order:
 
