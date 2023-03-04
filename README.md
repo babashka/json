@@ -35,3 +35,5 @@ Planned:
 - [charred](https://github.com/cnuernber/charred)
 
 If you are the author of one of the planned libraries, feel free to provide a PR as well.
+
+At some point this library will be included in babashka, but for now you can use it as a library in `bb.edn`.
