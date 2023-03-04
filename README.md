@@ -33,3 +33,5 @@ Planned:
 
 - [jsonista](https://github.com/metosin/jsonista)
 - [charred](https://github.com/cnuernber/charred)
+
+If you are the author of one of the planned libraries, feel free to provide a PR as well.
