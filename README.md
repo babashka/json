@@ -25,8 +25,8 @@ instead, while still choosing your preferred implementation on the JVM.
 On the JVM, this library uses whatever is on your classpath, in the following order:
 
 - [cheshire](https://github.com/dakrone/cheshire)
-- [clojure.data.json](https://github.com/clojure/data.json)
 - [charred](https://github.com/cnuernber/charred)
+- [clojure.data.json](https://github.com/clojure/data.json)
 
 More implementations will be added and contributions are welcome.
 
