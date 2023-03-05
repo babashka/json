@@ -39,7 +39,7 @@ jobs:
           restore-keys: cljdeps-
 
       - name: Test clj
-        run: bb -Dbabashka.json/provider=${{ matrix.provider }} test:clj
+        run: bb -Dbabashka.json.provider=${{ matrix.provider }} test:clj
 
       - name: Test bb
         run: bb test:bb
