@@ -4,7 +4,7 @@ This library provides an abstraction over several JSON implementations, covering
 
 - `read-str`: reading a JSON object from a string with a configurable keyword function, defaulting to `keyword`
 - `write-str`: writing a Clojure value to a JSON string
-- `get-provider`: returns a symbol of the currently used JSON provider, e.g. `org.clojure/data.json`, `cheshire/cheshire`, etc.
+- `get-provider`: returns a symbol of the currently used JSON provider
 
 The idea of this library is that you can use it in both JVM Clojure and
 babashka, without having to write code to dispatch between your choice of JVM
