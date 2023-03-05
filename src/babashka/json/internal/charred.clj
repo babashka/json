@@ -9,4 +9,4 @@
   ([s] (write-str s nil))
   ([s _opts] (json/write-json-str s)))
 
-(def fns [read-str write-str])
+(def fns ['com.cnuernber/charred read-str write-str])

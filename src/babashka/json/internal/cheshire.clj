@@ -9,4 +9,4 @@
   ([s] (write-str s nil))
   ([s _opts] (cheshire/generate-string s)))
 
-(def fns [read-str write-str])
+(def fns ['cheshire/cheshire read-str write-str])

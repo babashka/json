@@ -9,4 +9,4 @@
   ([s] (write-str s nil))
   ([s _opts] (json/write-str s)))
 
-(def fns [read-str write-str])
+(def fns ['org.clojure/data.json read-str write-str])
