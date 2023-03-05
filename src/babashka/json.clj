@@ -9,13 +9,14 @@
                        not-empty symbol)
       [lib read-fn write-fn]
       (if provider
-        (try-require (case provider
-                       org.clojure/data.json
-                       'babashka.json.internal.data-json/fns
-                       cheshire/cheshire
-                       'babashka.json.internal.cheshire/fns
-                       com.cnuernber/charred
-                       'babashka.json.internal.charred/fns))
+        (deref (requiring-resolve
+                (case provider
+                  org.clojure/data.json
+                  'babashka.json.internal.data-json/fns
+                  cheshire/cheshire
+                  'babashka.json.internal.cheshire/fns
+                  com.cnuernber/charred
+                  'babashka.json.internal.charred/fns)))
         (or
          ;; this should always work in babashka
          (try-require 'babashka.json.internal.cheshire/fns)

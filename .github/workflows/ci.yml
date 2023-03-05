@@ -42,4 +42,4 @@ jobs:
         run: bb -Dbabashka.json/provider=${{ matrix.provider }} test:clj
 
       - name: Test bb
-        run: bb -Dbabashka.json/provider=${{ matrix.provider }} test:bb
+        run: bb test:bb
