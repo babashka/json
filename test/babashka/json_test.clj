@@ -14,6 +14,5 @@
 
 (deftest provider-test
   (let [prop (some-> (System/getProperty "babashka.json.provider") not-empty symbol)]
-    (prn :prop prop)
     (when prop
       (is (= prop (json/get-provider))))))
