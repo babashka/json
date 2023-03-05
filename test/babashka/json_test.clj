@@ -13,5 +13,5 @@
     (is (= {:a 1} (json/read-str (json/write-str {:a 1}))))))
 
 (deftest provider-test
-  (when-let [prop (some-> (System/getProperty "babashka.json/provider") not-empty symbol)]
+  (when-let [prop (some-> (System/getProperty "babashka.json.provider") not-empty symbol)]
     (is (= prop (json/get-provider)))))

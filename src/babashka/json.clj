@@ -5,7 +5,7 @@
        (catch Exception _e
          nil)))
 
-(let [provider (some-> (System/getProperty "babashka.json/provider")
+(let [provider (some-> (System/getProperty "babashka.json.provider")
                        not-empty symbol)
       [lib read-fn write-fn]
       (if provider
