@@ -26,13 +26,13 @@ On the JVM, this library uses whatever is on your classpath, in the following or
 
 - [cheshire](https://github.com/dakrone/cheshire)
 - [clojure.data.json](https://github.com/clojure/data.json)
+- [charred](https://github.com/cnuernber/charred)
 
 More implementations will be added and contributions are welcome.
 
 Planned:
 
 - [jsonista](https://github.com/metosin/jsonista)
-- [charred](https://github.com/cnuernber/charred)
 
 If you are the author of one of the planned libraries, feel free to provide a PR as well.
 

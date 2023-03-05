@@ -10,7 +10,8 @@
        ;; this should always work in babashka
        (try-require 'babashka.json.internal.cheshire/fns)
        ;; this one should always work as this project has a dependency on it
-       (try-require 'babashka.json.internal.data-json/fns))]
+       (try-require 'babashka.json.internal.data-json/fns)
+       (try-require 'babashka.json.internal.charred/fns))]
   (def read-fn read-fn)
   (def write-fn write-fn))
 
