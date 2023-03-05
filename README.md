@@ -29,6 +29,20 @@ On the JVM, this library uses whatever is on your classpath, in the following or
 - [charred](https://github.com/cnuernber/charred)
 - [clojure.data.json](https://github.com/clojure/data.json)
 
+You can force an implementation by setting the `babashka.json.provider` JVM
+system property before loading this library to:
+
+- `cheshire/cheshire`
+- `org.clojure/data.json`
+- `com.cnuernber/charred`
+
+For convenience this library depends on one JSON implementation,
+`org.clojure/data.json`, so you don't have to include another dependency. If you don't want this dependency on your classpath, you can use:
+
+```
+:exclusions [org.clojure/data.json]
+```
+
 More implementations will be added and contributions are welcome.
 
 Planned:
