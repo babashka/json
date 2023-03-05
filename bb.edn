@@ -1,6 +1,7 @@
 {:deps {org.babashka/json {:local/root "."}}
  :tasks
- {test:clj (clojure "-M:test")
+ {test:clj (clojure (str "-J-Dbabashka.json.provider=" (System/getProperty "babashka.json.provider"))
+                    "-M:test")
   test:bb  {:extra-paths ["test"]
             :extra-deps {com.cognitect/test-runner
                          {:git/url "https://github.com/cognitect-labs/test-runner"

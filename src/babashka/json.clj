@@ -5,14 +5,25 @@
        (catch Exception _e
          nil)))
 
-(let [[lib read-fn write-fn]
-      (or
-       ;; this should always work in babashka
-       (try-require 'babashka.json.internal.cheshire/fns)
-       ;; this needs to be added to the classpath explicitly
-       (try-require 'babashka.json.internal.charred/fns)
-       ;; this one should always work as this project has a dependency on it.
-       (try-require 'babashka.json.internal.data-json/fns))]
+(let [provider (some-> (System/getProperty "babashka.json.provider")
+                       not-empty symbol)
+      [lib read-fn write-fn]
+      (if provider
+        (deref (requiring-resolve
+                (case provider
+                  org.clojure/data.json
+                  'babashka.json.internal.data-json/fns
+                  cheshire/cheshire
+                  'babashka.json.internal.cheshire/fns
+                  com.cnuernber/charred
+                  'babashka.json.internal.charred/fns)))
+        (or
+         ;; this should always work in babashka
+         (try-require 'babashka.json.internal.cheshire/fns)
+         ;; this needs to be added to the classpath explicitly
+         (try-require 'babashka.json.internal.charred/fns)
+         ;; this one should always work as this project has a dependency on it.
+         (try-require 'babashka.json.internal.data-json/fns)))]
   (def ^:private lib lib)
   (def ^:private read-fn read-fn)
   (def ^:private write-fn write-fn))

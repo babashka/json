@@ -2,7 +2,7 @@
   (:require [babashka.json :as json]
             [clojure.test :refer [deftest is testing]]))
 
-(deftest read-str-test
+(deftest json-test
   (testing "read json"
     (is (= [1 2 3] (json/read-str "[1, 2, 3]")))
     (is (= {:a 1} (json/read-str "{\"a\": 1}")))
@@ -11,3 +11,8 @@
   (testing "write json"
     (is (= [1 2 3] (json/read-str (json/write-str [1 2 3]))))
     (is (= {:a 1} (json/read-str (json/write-str {:a 1}))))))
+
+(deftest provider-test
+  (let [prop (some-> (System/getProperty "babashka.json.provider") not-empty symbol)]
+    (when prop
+      (is (= prop (json/get-provider))))))
