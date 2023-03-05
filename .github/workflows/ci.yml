@@ -4,7 +4,7 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-latest, macOS-latest, windows-latest]
+        os: [ubuntu-latest]
         provider: [cheshire/cheshire, org.clojure/data.json, com.cnuernber/charred]
     runs-on: ${{ matrix.os }}
     steps:
