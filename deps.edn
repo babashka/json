@@ -17,4 +17,4 @@
   :ns-default build}
 
   :neil {:project {:name org.babashka/json
-                   :version "0.1.0"}}}}
+                   :version "0.1.1"}}}}
