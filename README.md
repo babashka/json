@@ -1,5 +1,7 @@
 # babashka.json
 
+[![Clojars Project](https://img.shields.io/clojars/v/org.babashka/json.svg)](https://clojars.org/org.babashka/json)
+
 This library provides an abstraction over several JSON implementations, covering the most common scripting use cases:
 
 - `read-str`: reading a JSON object from a string with a configurable keyword function, defaulting to `keyword`

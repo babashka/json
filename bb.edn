@@ -6,4 +6,6 @@
             :extra-deps {com.cognitect/test-runner
                          {:git/url "https://github.com/cognitect-labs/test-runner"
                           :git/sha "a522ab2851a2aa5bf9c22a942b45287a3a019310"}}
-            :task cognitect.test-runner/-main}}}
+            :task cognitect.test-runner/-main}
+
+  publish (clojure "-T:build deploy")}}
