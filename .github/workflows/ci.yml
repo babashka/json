@@ -5,7 +5,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        provider: [cheshire/cheshire, org.clojure/data.json, com.cnuernber/charred]
+        provider: [cheshire/cheshire, org.clojure/data.json, com.cnuernber/charred, metosin/jsonista]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
