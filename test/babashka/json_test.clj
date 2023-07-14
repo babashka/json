@@ -10,7 +10,9 @@
     (is (= {"a" 1} (json/read-str "{\"a\": 1}" {:key-fn str}))))
   (testing "write json"
     (is (= [1 2 3] (json/read-str (json/write-str [1 2 3]))))
-    (is (= {:a 1} (json/read-str (json/write-str {:a 1}))))))
+    (is (= {:a 1} (json/read-str (json/write-str {:a 1})))))
+  (testing "read json"
+    (is (= [1 2 3] (json/read (java.io.StringReader. "[1, 2, 3]"))))))
 
 (deftest provider-test
   (let [prop (some-> (System/getProperty "babashka.json.provider") not-empty symbol)]
