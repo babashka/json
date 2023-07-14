@@ -8,7 +8,7 @@
 
 (let [provider (some-> (System/getProperty "babashka.json.provider")
                        not-empty symbol)
-      [lib read-str-fn write-str-fn read-fn]
+      [lib read-str-fn write-str-fn ->json-reader read-fn]
       (if provider
         (deref (requiring-resolve
                 (case provider
@@ -32,6 +32,7 @@
   (def ^:private lib lib)
   (def ^:private read-str-fn read-str-fn)
   (def ^:private write-str-fn write-str-fn)
+  (def ^:private internal->json-reader ->json-reader)
   (def ^:private read-fn read-fn))
 
 (defn read
@@ -48,6 +49,11 @@
   ([s] (write-str s nil))
   ([s opts]
    (write-str-fn s opts)))
+
+(defn ->json-reader
+  ([x] (->json-reader x nil))
+  ([x _opts]
+   (internal->json-reader x)))
 
 (defn get-provider
   "Returns which library currently provides the JSON implementation."

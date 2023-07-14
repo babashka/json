@@ -3,6 +3,7 @@
             [clojure.test :refer [deftest is testing]]))
 
 (deftest json-test
+  (println "Testing provider" (json/get-provider))
   (testing "read json"
     (is (= [1 2 3] (json/read-str "[1, 2, 3]")))
     (is (= {:a 1} (json/read-str "{\"a\": 1}")))
@@ -12,7 +13,10 @@
     (is (= [1 2 3] (json/read-str (json/write-str [1 2 3]))))
     (is (= {:a 1} (json/read-str (json/write-str {:a 1})))))
   (testing "read json"
-    (is (= [1 2 3] (json/read (java.io.StringReader. "[1, 2, 3]"))))))
+    (is (= [1 2 3] (json/read (json/->json-reader (java.io.StringReader. "[1, 2, 3]")))))
+    (let [rdr (json/->json-reader (java.io.StringReader. "[1, 2, 3][4, 5, 6]"))]
+      (is (= [1 2 3] (json/read rdr)))
+      (is (= [4 5 6] (json/read rdr))))))
 
 (deftest provider-test
   (let [prop (some-> (System/getProperty "babashka.json.provider") not-empty symbol)]
