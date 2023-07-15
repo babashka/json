@@ -13,7 +13,7 @@
     (is (= [1 2 3] (json/read-str (json/write-str [1 2 3]))))
     (is (= {:a 1} (json/read-str (json/write-str {:a 1})))))
   (testing "read json"
-    (is (= [1 2 3] (json/read (json/->json-reader (java.io.StringReader. "{\"a\": 1}")))))
+    (is (= {:a 1} (json/read (json/->json-reader (java.io.StringReader. "{\"a\": 1}")))))
     (let [rdr (json/->json-reader (java.io.StringReader. "{\"a\": 1} {\"b\": 2}"))]
       (is (= {:a 1} (json/read rdr)))
       (is (= {:b 2} (json/read rdr))))))
