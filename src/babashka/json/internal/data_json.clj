@@ -4,8 +4,8 @@
 
 (defn read
   ([reader] (read reader nil))
-  ([reader _opts]
-   (json/read reader)))
+  ([reader {:keys [key-fn]}]
+   (json/read reader :key-fn (or key-fn keyword))))
 
 (defn read-str
   ([s] (read-str s nil))
@@ -15,4 +15,6 @@
   ([s] (write-str s nil))
   ([s _opts] (json/write-str s)))
 
-(def fns ['org.clojure/data.json read-str write-str (fn [x & _] x) read])
+(defn ->json-reader [x & _xs] x)
+
+(def fns ['org.clojure/data.json read-str write-str ->json-reader read])
