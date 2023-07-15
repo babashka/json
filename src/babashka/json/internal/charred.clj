@@ -7,7 +7,8 @@
 
 (defn ->json-reader
   ([x] (->json-reader x nil))
-  ([x {:keys [key-fn] :or {key-fn keyword}}] (json/read-json-supplier x :key-fn key-fn)))
+  ([x {:keys [key-fn] :or {key-fn keyword}}]
+   (json/read-json-supplier x {:key-fn key-fn})))
 
 (defn read
   ([reader] (read reader nil))
@@ -22,4 +23,4 @@
   ([s] (write-str s nil))
   ([s _opts] (json/write-json-str s)))
 
-(def fns ['com.cnuernber/charred read-str write-str (fn [x & _xs] x) read])
+(def fns ['com.cnuernber/charred read-str write-str ->json-reader read])
