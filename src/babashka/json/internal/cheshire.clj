@@ -15,4 +15,4 @@
   ([reader {:keys [key-fn]}]
    (cheshire/parse-stream reader (or key-fn keyword))))
 
-(def fns ['cheshire/cheshire read-str write-str identity read])
+(def fns ['cheshire/cheshire read-str write-str (fn [x & _whatever] x) read])

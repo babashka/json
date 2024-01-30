@@ -52,8 +52,8 @@
 
 (defn ->json-reader
   ([x] (->json-reader x nil))
-  ([x _opts]
-   (internal->json-reader x)))
+  ([x opts]
+   (internal->json-reader x opts)))
 
 (defn get-provider
   "Returns which library currently provides the JSON implementation."
