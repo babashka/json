@@ -16,7 +16,8 @@
     (let [rdr (json/->json-reader (java.io.StringReader. "{\"a\": 1}"))]
       (is (= {:a 1} (json/read rdr))))
     (testing "without keywords"
-      (let [rdr (json/->json-reader (java.io.StringReader. "{\"a\": 1}"))]
+      (let [rdr (json/->json-reader (java.io.StringReader. "{\"a\": 1}")
+                                    {:key-fn str})]
         (is (= {"a" 1} (json/read rdr {:key-fn str})))))))
 
 (deftest provider-test

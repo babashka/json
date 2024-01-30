@@ -30,6 +30,6 @@
 
 (defn write-str
   ([s] (write-str s nil))
-  ([s {:keys [key-fn] :or {key-fn keyword}}] (json/write-value-as-string s (-key-fn->object-mapper key-fn))))
+  ([s _opts] (json/write-value-as-string s (-key-fn->object-mapper nil))))
 
 (def fns ['metosin/jsonista read-str write-str ->json-reader read])
