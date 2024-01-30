@@ -13,9 +13,11 @@
     (is (= [1 2 3] (json/read-str (json/write-str [1 2 3]))))
     (is (= {:a 1} (json/read-str (json/write-str {:a 1})))))
   (testing "read json"
-    (let [rdr (json/->json-reader (java.io.StringReader. "{\"a\": 1} {\"b\": 2}"))]
-      (is (= {:a 1} (json/read rdr)))
-      #_(is (= {:b 2} (json/read rdr))))))
+    (let [rdr (json/->json-reader (java.io.StringReader. "{\"a\": 1}"))]
+      (is (= {:a 1} (json/read rdr))))
+    (testing "without keywords"
+      (let [rdr (json/->json-reader (java.io.StringReader. "{\"a\": 1}"))]
+        (is (= {"a" 1} (json/read rdr {:key-fn str})))))))
 
 (deftest provider-test
   (let [prop (some-> (System/getProperty "babashka.json.provider") not-empty symbol)]
