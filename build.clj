@@ -54,6 +54,7 @@
            :basis basis}))
 
 (defn deploy [opts]
+  (clean opts)
   (jar opts)
   ((requiring-resolve 'deps-deploy.deps-deploy/deploy)
     (merge {:installer :remote

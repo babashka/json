@@ -2,6 +2,10 @@
 
 [Babashka.json](https://github.com/babashka/json): JSON abstraction library
 
+## 0.1.6
+
+- Clean up classes dir before building jar
+
 ## 0.1.5
 
 - Fix `read` with `:key-fn` in jsonista
