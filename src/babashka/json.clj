@@ -36,21 +36,31 @@
   (def ^:private read-fn read-fn))
 
 (defn read
+  "Returns a Clojure value from the JSON reader.
+  
+  Accepts the following options:
+    :key-fn - Convert JSON keys using this function. Defaults to keyword."
   ([reader] (read reader nil))
   ([reader opts]
    (read-fn reader opts)))
 
 (defn read-str
+  "Returns a Clojure value from the JSON string.
+
+  Accepts the following options:
+    :key-fn - Convert JSON keys using this function. Defaults to keyword."
   ([s] (read-str s nil))
   ([s opts]
    (read-str-fn s opts)))
 
 (defn write-str
+  "Returns a JSON string from the Clojure value."
   ([s] (write-str s nil))
   ([s opts]
    (write-str-fn s opts)))
 
 (defn ->json-reader
+  "Returns a JSON reader."
   ([x] (->json-reader x nil))
   ([x opts]
    (internal->json-reader x opts)))
