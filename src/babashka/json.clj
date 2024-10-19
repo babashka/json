@@ -38,7 +38,7 @@
 (defn read
   "Returns a Clojure value from the JSON reader.
   
-  Accepts the following options:
+  Options:
     :key-fn - Convert JSON keys using this function. Defaults to keyword."
   ([reader] (read reader nil))
   ([reader opts]
@@ -47,7 +47,7 @@
 (defn read-str
   "Returns a Clojure value from the JSON string.
 
-  Accepts the following options:
+  Options:
     :key-fn - Convert JSON keys using this function. Defaults to keyword."
   ([s] (read-str s nil))
   ([s opts]
