@@ -55,9 +55,9 @@
 
 (defn write-str
   "Returns a JSON string from the Clojure value."
-  ([s] (write-str s nil))
-  ([s opts]
-   (write-str-fn s opts)))
+  ([x] (write-str x nil))
+  ([x opts]
+   (write-str-fn x opts)))
 
 (defn ->json-reader
   "Returns a JSON reader."
