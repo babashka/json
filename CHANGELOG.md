@@ -2,7 +2,7 @@
 
 [Babashka.json](https://github.com/babashka/json): JSON abstraction library
 
-## Unreleased
+## 0.1.7
 
 - Add [oda](https://github.com/mpenet/oda) provider
 
