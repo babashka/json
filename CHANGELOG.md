@@ -4,7 +4,8 @@
 
 ## 0.1.7
 
-- Add [oda](https://github.com/mpenet/oda) provider
+- [#11](https://github.com/babashka/json/pull/11): add [oda](https://github.com/mpenet/oda) provider ([@mpenet](https://github.com/mpenet))
+- [#9](https://github.com/babashka/json/pull/9): add docstrings ([@rads](https://github.com/rads))
 
 ## 0.1.6
 
