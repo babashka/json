@@ -30,6 +30,7 @@ On the JVM, this library uses whatever is on your classpath, in the following or
 - [cheshire](https://github.com/dakrone/cheshire)
 - [charred](https://github.com/cnuernber/charred)
 - [jsonista](https://github.com/metosin/jsonista)
+- [oda](https://github.com/mpenet/oda) (requires JDK 25+)
 - [clojure.data.json](https://github.com/clojure/data.json)
 
 You can force an implementation by setting the `babashka.json.provider` JVM
@@ -39,6 +40,7 @@ system property before loading this library to:
 - `org.clojure/data.json`
 - `com.cnuernber/charred`
 - `metosin/jsonista`
+- `com.s-exp/oda`
 
 For convenience this library depends on one JSON implementation,
 `org.clojure/data.json`, so you don't have to include another dependency. If you don't want this dependency on your classpath, you can use:

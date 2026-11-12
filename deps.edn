@@ -7,7 +7,8 @@
                 cheshire/cheshire {:mvn/version "5.11.0"}
                 org.clojure/data.json {:mvn/version "2.4.0"}
                 com.cnuernber/charred {:mvn/version "1.025"}
-                metosin/jsonista {:mvn/version "0.3.7"}}
+                metosin/jsonista {:mvn/version "0.3.7"}
+                com.s-exp/oda {:mvn/version "1.0.0-alpha47"}}
    :main-opts ["-m" "cognitect.test-runner"]
    :exec-fn cognitect.test-runner.api/test}
 
