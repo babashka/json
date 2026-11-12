@@ -19,7 +19,9 @@
                   com.cnuernber/charred
                   'babashka.json.internal.charred/fns
                   metosin/jsonista
-                  'babashka.json.internal.jsonista/fns)))
+                  'babashka.json.internal.jsonista/fns
+                  com.s-exp/oda
+                  'babashka.json.internal.oda/fns)))
         (or
          ;; this should always work in babashka
          (try-require 'babashka.json.internal.cheshire/fns)
@@ -27,6 +29,8 @@
          (try-require 'babashka.json.internal.charred/fns)
          ;; this needs to be added to the classpath explicitly
          (try-require 'babashka.json.internal.jsonista/fns)
+         ;; this needs to be added to the classpath explicitly
+         (try-require 'babashka.json.internal.oda/fns)
          ;; this one should always work as this project has a dependency on it.
          (try-require 'babashka.json.internal.data-json/fns)))]
   (def ^:private lib lib)
